@@ -12,8 +12,7 @@ __date__        = "2019/11/19"
 
 __version__     = '0.0.1.dev1'
 
-def scissors():
-    print("Hello Scissors :)")
+from newskylabs.tools.scissors.scripts.scissors import scissors
 
 ## =========================================================
 ## Main
