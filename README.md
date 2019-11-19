@@ -16,23 +16,30 @@ tasks.
 
 See:
 
-  - [Wikipedia: Optical character recognition](https://en.wikipedia.org/wiki/Optical_character_recognition)
+  - Wikipedia: [Optical character recognition](https://en.wikipedia.org/wiki/Optical_character_recognition)
 
-For an example see the `Kuzushiji Recognition` kaggle project page:
+For an example see the 
+[Kuzushiji Recognition](https://www.kaggle.com/c/kuzushiji-recognition/overview/about-kuzushiji)
+kaggle project page:
 
-  - [Kuzushiji Recognition \\
+  - [Kuzushiji Recognition -
     Opening the door to a thousand years of Japanese culture](https://www.kaggle.com/c/kuzushiji-recognition/overview/about-kuzushiji)
 
-* project page:  [newskylabs-tools-scissors](https://github.com/newskylabs/newskylabs-tools-scissors)
-* author:        [Dietrich Bollmann](http://dietrichbollmann.com/)
-* company:       [NewSkyLabs](http://newskylabs.com/)
-* copyright:     Copyright 2019 Dietrich Bollmann
+
+## Project Information
+
+* Project page:  [newskylabs-tools-scissors](https://github.com/newskylabs/newskylabs-tools-scissors)
+* Author:        [Dietrich Bollmann](http://dietrichbollmann.com/)
+* Company:       [NewSkyLabs](http://newskylabs.com/)
+* Copyright:     Copyright 2019 Dietrich Bollmann
+
 
 ## Usage
 
 TODO
 
-# Comments etc.
+
+## Comments etc.
 
 If you have any comments, [please drop me a message](http://dietrichbollmann.com/)!
 
