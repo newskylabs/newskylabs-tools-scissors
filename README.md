@@ -5,7 +5,7 @@
 
 Goal:
 
-*scissors* is a tool to visualize, edit, and recognize bounding boxes
+`scissors` is a tool to visualize, edit, and recognize bounding boxes
 and character class annotations of printed and hand-written characters
 in scanned texts.
 
