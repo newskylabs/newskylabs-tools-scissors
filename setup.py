@@ -112,13 +112,13 @@ setuptools.setup(
     keywords='deep learning, dataset generation, scan postprocessing, scissors.',
     platforms=['Posix', 'Unix', 'Linux', 'MacOS X', 'Windows'],
     packages=packages,
-    #| package_data={
-    #|     'newskylabs.tools.scissors': [
-    #|         'data/scans/scan000.txt',
-    #|         'data/scans/*.txt'
-    #|     ]
-    #| },
-    #| include_package_data=True,
+    package_data={
+        'newskylabs.tools.scissors': [
+            'data/kuzushiji/kashiwafunabashi/images/*.jpg',
+            'data/kuzushiji/kashiwafunabashi/*.csv',
+        ]
+    },
+    include_package_data=True,
 )
 
 ## =========================================================
