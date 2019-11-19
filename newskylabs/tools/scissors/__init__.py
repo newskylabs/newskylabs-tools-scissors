@@ -14,9 +14,21 @@
 ## limitations under the License.
 ## ---------------------------------------------------------
 
-## =========================================================
-## Package metadata
-## ---------------------------------------------------------
+from newskylabs.tools.scissors.__about__ import (
+    __package_name__,
+    __version__,
+    __status__,
+    __description__,
+    __author__,
+    __authors__,
+    __maintainer__,
+    __email__,
+    __contact__,
+    __copyright__,
+    __url__,
+    __license__,
+    __date__,
+)
 
 __all__ = [
     '__package_name__',
@@ -33,20 +45,6 @@ __all__ = [
     '__license__',
     '__date__',
 ]
-
-__package_name__ = 'newskylabs-tools-scissors'
-__version__      = '0.0.1.dev1'
-__status__       = 'Development'
-__description__  = '{'name': 'NewSkyLabs'} Python project {}'.format(__package_name__)
-__author__       = 'Dietrich Bollmann'
-__authors__      = [__author__]
-__maintainer__   = __author__
-__email__        = 'dietrich@newskylabs.net'
-__contact__      = __email__
-__copyright__    = 'Copyright 2019 {}'.format(__author__)
-__url__          = 'http://newskylabs.net/python/packages/{}'.format(__package_name__)
-__license__      = 'Apache License 2.0, http://www.apache.org/licenses/LICENSE-2.0'
-__date__         = '2019/11/18'
 
 ## =========================================================
 ## =========================================================

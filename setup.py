@@ -16,7 +16,7 @@
 
 """setup.py:
 
-Setup file for the NewSkyLabs Python project newskylabs-tools-scissors.
+Setup file for NewSkyLab's `scissors` tool.
 
 """
 
@@ -36,31 +36,43 @@ def read_file(*parts):
     with codecs.open(os.path.join(package_dir, *parts), 'r') as fp:
         return fp.read()
 
-def find_packages(namespace):
+def find_packages(namespace, subnamespace):
+    """Return a list of all Python packages defined in the 'namespace'
+    directory.  A directory is only interpreted as a package if it
+    contains a __init__.py file.
+
     """
-    Return a list of all Python packages defined in the 'namespace'
-    directory
-    """
-    return [
-        '{}.{}'.format(namespace, package) 
-        for package in setuptools.PackageFinder.find(where=namespace)
+    packages = [
+        '{}.{}.{}'.format(namespace, subnamespace, package)
+        for package in setuptools.PackageFinder.find(
+                where='{}/{}'.format(namespace, subnamespace)
+        )
     ]
+    
+    # DEBUG
+    print("DEBUG packages:")
+    for package in packages:
+        print("  - {}".format(package))
+
+    return packages
 
 ## =========================================================
 ## Setup
 ## ---------------------------------------------------------
 
-namespace    = 'newskylabs'
-subnamespace = 'newskylabs-tools-scissors'
+# Namespace
+namespace       = 'newskylabs'
+subnamespace    = 'tools'
+subsubnamespace = 'scissors'
 
 # Load the package metadata 
-exec(read_file(namespace, subnamespace, '__about__.py'))
+exec(read_file(namespace, subnamespace, subsubnamespace, '__about__.py'))
 
 # Read the long description
 long_description = read_file('README.md')
 
 # Find the list of packages
-packages = find_packages(namespace)
+packages = find_packages(namespace, subnamespace)
 
 # Setup package
 setuptools.setup(
@@ -73,9 +85,38 @@ setuptools.setup(
     author_email=__email__,
     license=__license__,
     url=__url__,
+    entry_points={
+        'console_scripts': [
+            'scissors = newskylabs.tools.scissors.__main__:scissors',
+        ]
+    },
+    keywords='deep learning, dataset generation, scan postprocessing, scissors.',
+    platforms=['Posix', 'Unix', 'Linux', 'MacOS X', 'Windows'],
+    packages=packages,
+    package_data={
+        'newskylabs.tools.scissors': [
+            'data/scans/scan000.txt',
+            'data/scans/*.txt'
+        ]
+    },
+    include_package_data=True,
+    install_requires=[
+        'click>=7.0',
+        'numpy>=1.17.2',
+        # 'cv2>=4.1.1', # Install manually
+        # 'pygame>=1.9.6', # Install manually
+        # 'kivy>=1.11.1', # Install manually
+    ],
     classifiers=[
-        'Programming Language :: Python :: 3',
+        'Development Status :: 3 - Alpha',
+        'Environment :: Console',
+        'Intended Audience :: Developers',
+        'Intended Audience :: Education',
+        'Intended Audience :: Science/Research',
         'License :: OSI Approved :: Apache Software License',
+        'Programming Language :: Python :: 3',
+        'Topic :: Software Development :: Libraries',
+        'Topic :: Software Development :: Libraries :: Python Modules'
         'Operating System :: OS Independent',
     ],
     platforms=['Posix', 'Unix', 'Linux', 'MacOS X', 'Windows'],
