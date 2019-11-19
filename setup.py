@@ -90,16 +90,6 @@ setuptools.setup(
             'scissors = newskylabs.tools.scissors.__main__:scissors',
         ]
     },
-    keywords='deep learning, dataset generation, scan postprocessing, scissors.',
-    platforms=['Posix', 'Unix', 'Linux', 'MacOS X', 'Windows'],
-    packages=packages,
-    package_data={
-        'newskylabs.tools.scissors': [
-            'data/scans/scan000.txt',
-            'data/scans/*.txt'
-        ]
-    },
-    include_package_data=True,
     install_requires=[
         'click>=7.0',
         'numpy>=1.17.2',
@@ -119,9 +109,16 @@ setuptools.setup(
         'Topic :: Software Development :: Libraries :: Python Modules'
         'Operating System :: OS Independent',
     ],
+    keywords='deep learning, dataset generation, scan postprocessing, scissors.',
     platforms=['Posix', 'Unix', 'Linux', 'MacOS X', 'Windows'],
     packages=packages,
-    include_package_data=True,
+    #| package_data={
+    #|     'newskylabs.tools.scissors': [
+    #|         'data/scans/scan000.txt',
+    #|         'data/scans/*.txt'
+    #|     ]
+    #| },
+    #| include_package_data=True,
 )
 
 ## =========================================================
