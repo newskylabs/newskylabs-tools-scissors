@@ -38,6 +38,26 @@ __copyright__   = "Copyright 2019 Dietrich Bollmann"
 __license__     = "Apache License 2.0, http://www.apache.org/licenses/LICENSE-2.0"
 __date__        = "2019/10/19"
 
+# Check that Kivy has been installed
+try:
+    import kivy
+except ModuleNotFoundError:
+    error_msg = """
+ERROR Kivy has not been installed!
+
+Scissors relies on Kivy for its graphical user interface.
+
+Kivy has to be installed manually.  Please follow the installation
+instructions on the following page:
+
+  - Kivy Docs > Getting Started > Installation
+    https://kivy.org/doc/stable/gettingstarted/installation.html
+
+"""
+    import sys
+    print(error_msg, file=sys.stderr)
+    sys.exit(1)
+
 import click
 
 from newskylabs.tools.scissors.utils.generic import get_version_long
