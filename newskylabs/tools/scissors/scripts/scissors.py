@@ -134,12 +134,10 @@ def scissors(image_dir, class_mapping, annotations, examples):
     # Initializing the logger
     init_logger(Logger)
 
-    # DEBUG
-    print("")
-    print("  - image_dir:     {}".format(image_dir))
-    print("  - class_mapping: {}".format(class_mapping))
-    print("  - annotations:   {}".format(annotations))
-    print("")
+    # INFO
+    Logger.info('Parameter: image_dir:     {}'.format(image_dir))
+    Logger.info('Parameter: class_mapping: {}'.format(class_mapping))
+    Logger.info('Parameter: annotations:   {}'.format(annotations))
     
     # Show examples?
     if examples:
