@@ -61,6 +61,7 @@ instructions on the following page:
 import click
 
 from newskylabs.tools.scissors.utils.generic import get_version_long
+from newskylabs.tools.scissors.gui.main import ScissorsApp
 
 ## =========================================================
 ## Examples
@@ -126,7 +127,6 @@ def scissors(image_dir, class_mapping, annotations, examples):
     class annotations.
 
     """
-    print("Hello Click Scissors :)")
 
     # DEBUG
     print("")
@@ -139,6 +139,10 @@ def scissors(image_dir, class_mapping, annotations, examples):
     if examples:
         print_examples()
         exit()
+
+    # Start the GUI
+    scissors = ScissorsApp()
+    scissors.run()
 
 ## =========================================================
 ## =========================================================
