@@ -6,7 +6,7 @@ Description:
 
 A tool for recognizing and editing character bounding boxes and class annotations.
 
-!!! Project in Progress !!!
+!!! Work in Progress !!!
 
 Goal:
 
@@ -37,14 +37,21 @@ __email__       = "dietrich@formgames.org"
 __copyright__   = "Copyright 2019 Dietrich Bollmann"
 __license__     = "Apache License 2.0, http://www.apache.org/licenses/LICENSE-2.0"
 __date__        = "2019/10/19"
-           
+
+import click
+
 ## =========================================================
 ## Main
 ## ---------------------------------------------------------
- 
-def scissors():
-    print("Hello Scissors :)")
 
+@click.command()
+def scissors():
+    """A tool for recognizing and editing character bounding boxes and
+    class annotations.
+
+    """
+    print("Hello Click Scissors :)")
+    
 ## =========================================================
 ## =========================================================
 
