@@ -59,6 +59,7 @@ instructions on the following page:
     sys.exit(1)
 
 from kivy.logger import Logger
+from newskylabs.tools.scissors.utils.logger import init_logger
 
 import click
 
@@ -130,8 +131,8 @@ def scissors(image_dir, class_mapping, annotations, examples):
 
     """
 
-    # DEBUG
-    Logger.debug('Setting up Scissors Logger: Hello Kivy Logger :)')
+    # Initializing the logger
+    init_logger(Logger)
 
     # DEBUG
     print("")
