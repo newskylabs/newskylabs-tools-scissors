@@ -43,6 +43,21 @@ import click
 from newskylabs.tools.scissors.utils.generic import get_version_long
 
 ## =========================================================
+## Examples
+## ---------------------------------------------------------
+ 
+def print_examples():
+    """Print examples."""
+    print("""Examples:
+
+scissors \\
+  --image-dir     data/images \\
+  --class-mapping data/class-mappings.csv \\
+  --annotations   data/annotations.csv
+
+""")
+
+## =========================================================
 ## Main
 ## ---------------------------------------------------------
 
@@ -57,6 +72,10 @@ option_class_mapping_default = "data/class-mappings.csv" # TODO Get the default 
 # -a, --annotations
 option_annotations_help = "A file with the character annotations (labels and bounding boxes)."
 option_annotations_default = "data/annotations.csv" # TODO Get the default annotation file from the config.
+
+# -e, --examples
+option_examples_help = "Show some usage examples."
+option_examples_default = False
 
 @click.command()
 
@@ -75,9 +94,14 @@ option_annotations_default = "data/annotations.csv" # TODO Get the default annot
               default=option_annotations_default,
               help=option_annotations_help)
 
+@click.option('-e', '--examples',
+              is_flag=True,
+              default=option_examples_default,
+              help=option_examples_help)
+
 @click.version_option(get_version_long(), '-V', '--version')
 
-def scissors(image_dir, class_mapping, annotations):
+def scissors(image_dir, class_mapping, annotations, examples):
     """A tool for recognizing and editing character bounding boxes and
     class annotations.
 
@@ -91,6 +115,11 @@ def scissors(image_dir, class_mapping, annotations):
     print("  - annotations:   {}".format(annotations))
     print("")
     
+    # Show examples?
+    if examples:
+        print_examples()
+        exit()
+
 ## =========================================================
 ## =========================================================
 
