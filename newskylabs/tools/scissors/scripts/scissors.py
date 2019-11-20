@@ -40,11 +40,16 @@ __date__        = "2019/10/19"
 
 import click
 
+from newskylabs.tools.scissors.utils.generic import get_version_long
+
 ## =========================================================
 ## Main
 ## ---------------------------------------------------------
 
 @click.command()
+
+@click.version_option(get_version_long(), '-V', '--version')
+
 def scissors():
     """A tool for recognizing and editing character bounding boxes and
     class annotations.
