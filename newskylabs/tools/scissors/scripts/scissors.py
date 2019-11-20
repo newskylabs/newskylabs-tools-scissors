@@ -58,6 +58,8 @@ instructions on the following page:
     print(error_msg, file=sys.stderr)
     sys.exit(1)
 
+from kivy.logger import Logger
+
 import click
 
 from newskylabs.tools.scissors.utils.generic import get_version_long
@@ -127,6 +129,9 @@ def scissors(image_dir, class_mapping, annotations, examples):
     class annotations.
 
     """
+
+    # DEBUG
+    Logger.debug('Setting up Scissors Logger: Hello Kivy Logger :)')
 
     # DEBUG
     print("")
